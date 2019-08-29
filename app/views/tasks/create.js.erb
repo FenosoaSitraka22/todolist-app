@@ -1,0 +1,2 @@
+//alert("aty jerena service");
+document.getElementById('<%=@category.title%>').insertAdjacentHTML("beforeend", "<%= j render 'task_list', task_list: @task%>")

@@ -1,0 +1,6 @@
+alert("Voulez vous vraiment supprimer ce task ??");
+var task = document.getElementById(<%=@task.id%>);
+console.log(task);
+var p = task.parentNode;
+
+p.removeChild(task);

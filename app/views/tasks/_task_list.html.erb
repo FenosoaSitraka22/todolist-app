@@ -1,9 +1,11 @@
-<ul>
-  <% @tasks.each do |task|  %>
-    <li>
-      <%= task.title %>,
-      "Deadline : " <%=  task.deadline.strftime("%D")  %>
-       <%= link_to "Edit this task", edit_task_path(task) %>
-    </li>
-  <% end %>
-</ul>
+ 
+	  <li id=<%=@task.id%>>
+	  	<%= check_box_tag :ok, 1, @task.status, data: { remote: true, url: task_path(@task.id), method: :PATCH ,params: { id: @task.id, status: @task.status}.to_param}%>
+        <% unless @task.deadline.nil? %>
+         <%= @task.title  %>, to read: <%= @task.deadline.strftime('%D') %>
+        <% end %>	 
+
+         <%= form_tag "/tasks/#{@task.id}", method: :delete, remote:true do %> <%= submit_tag "Delete" %> <% end %> 	
+	  </li>
+
+

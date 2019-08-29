@@ -1,0 +1,13 @@
+s = document.getElementById('<%=@task.id%>')
+var a= <%=@task.status%> 
+	console.log(a);
+if ( a === true){
+	s.setAttribute("class","lt");
+	
+	a = false;
+	
+} else {
+	s.setAttribute("class","");
+
+	a = true;
+}
