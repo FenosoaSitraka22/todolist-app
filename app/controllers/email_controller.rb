@@ -5,7 +5,8 @@ class EmailController < ApplicationController
       end  
 
 	def show
-	   puts @e = Email.all[params[:id].to_i]
+		puts "*"*90
+	   puts @e = Email.find(params[:id])
 		respond_to do |format|
 	       format.html{redirect_to root_path}    
 	       format.js {}
@@ -14,8 +15,8 @@ class EmailController < ApplicationController
 	end
 
 	def create
-		@Fe = Email.new(object: Faker::Book.title,body: Faker::Book.title )
-	 if @Fe.save
+		@e = Email.new(object: Faker::Book.title,body: Faker::Book.title )
+	 if @e.save
 	   respond_to do |format|
 	       format.html{redirect_to root_path}    
 	       format.js {}

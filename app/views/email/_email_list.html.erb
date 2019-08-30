@@ -1,2 +1,2 @@
-<h3 id=<%=@e.id%>> 	<%= link_to @e.object, email_path, method: 'get', remote: true%> </h3>
+<h3 id=<%=@e.id%>> 	<%= link_to @e.object, email_path(@e.id), method: 'get', remote: true%> </h3>
  
