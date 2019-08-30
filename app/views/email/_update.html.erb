@@ -1,0 +1,10 @@
+<h6 id="lu?">
+<%if @e.read == true%>
+ 	<%= form_tag "/email/#{@e.id}", method: :patch,params:{read: @e.read}, remote:true do %> 	 <%= submit_tag "Marquer comme non lu" %> 
+ 	<% end %> 	
+<%else%>
+	<%= form_tag "/email/#{@e.id}", method: :patch,params:{read: @e.read}, remote:true do %> 	 <%= submit_tag "Marquer comme  lu" %> 
+	 	<% end %> 	
+<%end%>
+
+ 	</h6>

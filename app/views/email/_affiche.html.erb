@@ -2,5 +2,10 @@
 	<h3><%=@e.object%></h3>
 <h4><%=@e.body%></h4>
  <%= form_tag "/email/#{@e.id}", method: :delete, remote:true do %> <%= submit_tag "Supprimer mail" %> <% end %> 
- <%= form_tag "/email/#{@e.id}", method: :upatch, remote:true do %> <%= submit_tag "Marquer comme non lu" %> <% end %> 	
+
+ 	<h6 id="lu">
+ 		<%= form_tag "/email/#{@e.id}", method: :patch,params:{read: @e.read}, remote:true do %> <%= submit_tag "Marquer comme non lu" %> 
+ 		<% end %> 	
+ 	</h6>
+ 
 </div>
