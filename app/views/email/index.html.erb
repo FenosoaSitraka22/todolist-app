@@ -1,0 +1,12 @@
+ <%= form_tag "/email", method: :post, remote:true do %> <%= submit_tag "create" %> <% end %> 
+
+<div class="wrapper">
+  <div class="one">
+  	<%@Emails .each do |e|%>
+ <h3 id=<%=e.id%>> 	<%= link_to e.object, email_path(e.id), method: 'get', remote: true%> </h3>
+<%end%>
+  </div>
+  <div class="two" id="zonzaffiche">
+  </div>
+
+</div>

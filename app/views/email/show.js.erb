@@ -1,0 +1,5 @@
+alert("jsuis executer")
+s = document.getElementById(<%=params[:id]%>);
+console.log(s);
+af= document.querySelector("#zonzaffiche");
+af.innerHTML = "<%= j render 'affiche', affiche: @e%>"
